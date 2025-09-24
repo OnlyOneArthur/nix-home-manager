@@ -56,6 +56,7 @@
      ".config/kitty".source = ./dotfiles/kitty;
      ".config/spotify".source = ./dotfiles/spotify;
      ".config/yazi".source = ./dotfiles/yazi;
+     ".config/waybar".source = ./dotfiles/waybar;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
