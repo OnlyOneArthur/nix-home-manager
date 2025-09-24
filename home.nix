@@ -20,6 +20,7 @@
   home.packages = with pkgs; [
     spotify
     discord
+    zoom-us
 
    
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -46,6 +47,7 @@
   "spotify"
   "discord"
   "brave"
+  "zoom"
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
