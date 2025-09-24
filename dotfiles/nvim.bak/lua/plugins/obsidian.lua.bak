@@ -1,0 +1,229 @@
+return {
+  "epwalsh/obsidian.nvim",
+  version = "*",
+  lazy = true,
+  ft = "markdown",
+  dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+
+  opts = {
+    ---------------------------------------------------------------------------
+    -- VAULTS / WORKSPACES
+    ---------------------------------------------------------------------------
+    workspaces = {
+      { name = "personal", path = "~/Documents/Obsidian_vault/" },
+    },
+
+    new_notes_location = "current_dir",
+
+    ---------------------------------------------------------------------------
+    -- DAILY NOTES
+    ---------------------------------------------------------------------------
+
+    ---------------------------------------------------------------------------
+    -- COMPLETION
+    ---------------------------------------------------------------------------
+    completion = {
+      nvim_cmp = true,
+      min_chars = 2,
+    },
+
+    ---------------------------------------------------------------------------
+    -- MAPPINGS
+    ---------------------------------------------------------------------------
+    mappings = {
+      ["gf"] = {
+        action = function()
+          return require("obsidian").util.gf_passthrough()
+        end,
+        opts = { noremap = false, expr = true, buffer = true },
+      },
+      ["<leader>ch"] = {
+        action = function()
+          return require("obsidian").util.toggle_checkbox()
+        end,
+        opts = { buffer = true, desc = "Obsidian: toggle checkbox" },
+      },
+      ["<CR>"] = {
+        action = function()
+          return require("obsidian").util.smart_action()
+        end,
+        opts = { buffer = true, expr = true },
+      },
+    },
+
+    ---------------------------------------------------------------------------
+    -- NOTE NAMING / PATHS
+    ---------------------------------------------------------------------------
+    ---@param title string|nil
+    ---@return string
+    note_id_func = function(title)
+      -- Prefer PascalCase from title; otherwise timestamp fallback.
+      local function to_pascal(s)
+        s = (s or ""):gsub("[_%-%s]+", " "):gsub("[^%w%s]", "")
+        local out = s:gsub("(%S)(%S*)", function(first, rest)
+          return first:upper() .. rest:lower()
+        end)
+        return out:gsub("%s+", "")
+      end
+      if title and #vim.trim(title) > 0 then
+        return to_pascal(title)
+      end
+      return os.date("%Y%m%d-%H%M%S")
+    end,
+
+    ---@param spec { id: string, dir: obsidian.Path, title: string|? }
+    ---@return string|obsidian.Path
+    note_path_func = function(spec)
+      local path = spec.dir / tostring(spec.id)
+      return path:with_suffix(".md")
+    end,
+
+    ---------------------------------------------------------------------------
+    -- LINKS
+    ---------------------------------------------------------------------------
+    wiki_link_func = function(opts)
+      return require("obsidian.util").wiki_link_id_prefix(opts)
+    end,
+    markdown_link_func = function(opts)
+      return require("obsidian.util").markdown_link(opts)
+    end,
+    preferred_link_style = "wiki",
+
+    ---------------------------------------------------------------------------
+    -- FRONTMATTER (includes your requested `related: []`)
+    ---------------------------------------------------------------------------
+    disable_frontmatter = false,
+
+    ---@param note obsidian.Note
+    ---@return table
+    note_frontmatter_func = function(note)
+      -- Ensure title appears as an alias
+      if note.title then
+        note:add_alias(note.title)
+      end
+
+      local out = {
+        id = note.id,
+        aliases = note.aliases,
+        tags = note.tags,
+        created = os.date("%Y-%m-%d %H:%M"),
+        updated = os.date("%Y-%m-%d %H:%M"),
+        related = {}, -- << your requested field: always present as an empty list
+      }
+
+      -- Preserve any fields you added by hand in YAML
+      if note.metadata and not vim.tbl_isempty(note.metadata) then
+        for k, v in pairs(note.metadata) do
+          out[k] = v
+        end
+      end
+
+      return out
+    end,
+
+    ---------------------------------------------------------------------------
+    -- TEMPLATES
+    ---------------------------------------------------------------------------
+    templates = {
+      folder = "templates",
+      date_format = "%Y-%m-%d",
+      time_format = "%H:%M",
+      substitutions = {
+        vault_name = function()
+          local client = require("obsidian").get_client()
+          return client and client.current_workspace and client.current_workspace.name or ""
+        end,
+      },
+    },
+
+    ---------------------------------------------------------------------------
+    -- OPENERS (Linux-friendly)
+    ---------------------------------------------------------------------------
+    follow_url_func = function(url)
+      vim.fn.jobstart({ "xdg-open", url }, { detach = true })
+    end,
+
+    follow_img_func = function(img)
+      vim.fn.jobstart({ "xdg-open", img }, { detach = true })
+    end,
+
+    use_advanced_uri = false,
+    open_app_foreground = false,
+
+    ---------------------------------------------------------------------------
+    -- PICKER
+    ---------------------------------------------------------------------------
+    picker = {
+      name = "telescope.nvim",
+      note_mappings = { new = "<C-x>", insert_link = "<C-l>" },
+      tag_mappings = { tag_note = "<C-x>", insert_tag = "<C-l>" },
+    },
+
+    ---------------------------------------------------------------------------
+    -- SEARCH / OPEN
+    ---------------------------------------------------------------------------
+    sort_by = "modified",
+    sort_reversed = true,
+    search_max_lines = 1000,
+    open_notes_in = "current",
+
+    ---------------------------------------------------------------------------
+    -- CALLBACKS: keep `updated:` fresh on save
+    ---------------------------------------------------------------------------
+    callbacks = {
+      pre_write_note = function(_, note)
+        note.metadata = note.metadata or {}
+        note.metadata.updated = os.date("%Y-%m-%d %H:%M")
+      end,
+    },
+
+    ---------------------------------------------------------------------------
+    -- UI (no Nerd Font required)
+    ---------------------------------------------------------------------------
+    ui = {
+      enable = true,
+      update_debounce = 200,
+      max_file_length = 5000,
+      checkboxes = {
+        [" "] = { char = "☐", hl_group = "ObsidianTodo" },
+        ["x"] = { char = "✔", hl_group = "ObsidianDone" },
+        [">"] = { char = "›", hl_group = "ObsidianRightArrow" },
+        ["~"] = { char = "~", hl_group = "ObsidianTilde" },
+        ["!"] = { char = "!", hl_group = "ObsidianImportant" },
+      },
+      bullets = { char = "•", hl_group = "ObsidianBullet" },
+      external_link_icon = { char = "↗", hl_group = "ObsidianExtLinkIcon" },
+      reference_text = { hl_group = "ObsidianRefText" },
+      highlight_text = { hl_group = "ObsidianHighlightText" },
+      tags = { hl_group = "ObsidianTag" },
+      block_ids = { hl_group = "ObsidianBlockID" },
+      hl_groups = {
+        ObsidianTodo = { bold = true },
+        ObsidianDone = { bold = true },
+        ObsidianRightArrow = { bold = true },
+        ObsidianTilde = { bold = true },
+        ObsidianImportant = { bold = true },
+        ObsidianBullet = { bold = true },
+        ObsidianRefText = { underline = true },
+        ObsidianExtLinkIcon = {},
+        ObsidianTag = { italic = true },
+        ObsidianBlockID = { italic = true },
+        ObsidianHighlightText = { reverse = true },
+      },
+    },
+
+    ---------------------------------------------------------------------------
+    -- ATTACHMENTS
+    ---------------------------------------------------------------------------
+    attachments = {
+      img_folder = "assets/imgs",
+      img_name_func = function()
+        return string.format("%s-", os.time())
+      end,
+      img_text_func = function(client, path)
+        path = client:vault_relative_path(path) or path
+        return string.format("![%s](%s)", path.name, path)
+      end,
+    },
+  },
+}
