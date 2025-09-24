@@ -21,6 +21,7 @@
     spotify
     discord
     brave
+    vscodium
 
    
     # # Adds the 'hello' command to your environment. It prints a friendly
