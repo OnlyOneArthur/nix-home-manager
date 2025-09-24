@@ -77,8 +77,7 @@
   #
   home.sessionVariables = {
     XDG_DATA_DIRS = "${config.home.profileDirectory}/share:/usr/local/share:/usr/share";
-    XDG_ICON_DIRS = "${config.home.profileDirectory}/share/icons:/usr/share/icons";
-       
+    XDG_ICON_DIRS = "${config.home.profileDirectory}/share/icons:/usr/share:/usr/share/icons";
     # EDITOR = "emacs";
   };
 
