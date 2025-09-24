@@ -20,7 +20,6 @@
   home.packages = with pkgs; [
     spotify
     discord
-    nerd-fonts.jetbrains-mono
 
    
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -54,6 +53,7 @@
   # plain files is through 'home.file'.
   home.file = {
      ".config/nvim".source = ./dotfiles/nvim;
+     ".config/kitty".source = ./dotfiles/kitty;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
