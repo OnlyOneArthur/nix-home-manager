@@ -34,6 +34,7 @@
      ".config/yazi".source = ./dotfiles/yazi;
      ".config/waybar".source = ./dotfiles/waybar;
      ".config/Thunar".source = ./dotfiles/Thunar;
+     ".config/lazygit".source = ./dotfiles/lazygit;
   };
 
   home.sessionVariables = {
