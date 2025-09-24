@@ -68,6 +68,8 @@
   #  /etc/profiles/per-user/arthur/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    XDG_DATA_DIRS = "${config.home.profileDirectory}/share:/usr/local/share:/usr/share";
+    XDG_ICON_DIRS = "${config.home.profileDirectory}/share/icons:/usr/share/icons";
     # EDITOR = "emacs";
   };
 
