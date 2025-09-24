@@ -20,6 +20,8 @@
   home.packages = with pkgs; [
     spotify
     discord
+    brave
+
    
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -44,6 +46,7 @@
 
   "spotify"
   "discord"
+  "brave"
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
