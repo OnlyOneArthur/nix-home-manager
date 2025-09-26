@@ -29,7 +29,6 @@
     lolcat
     thunderbird
     syncthing
-    neovim
 
 
   ];
