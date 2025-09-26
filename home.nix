@@ -27,6 +27,7 @@
     wine
     bottles
     lolcat
+    thunderbird
 
    
 
