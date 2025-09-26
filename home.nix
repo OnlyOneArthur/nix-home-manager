@@ -29,6 +29,7 @@
     lolcat
     thunderbird
     syncthing
+    ventoy
 
 
   ];
