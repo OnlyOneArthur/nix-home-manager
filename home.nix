@@ -30,6 +30,7 @@
     thunderbird
     syncthing
     tealdeer
+    cowsay
 
 
   ];
