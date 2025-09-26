@@ -42,7 +42,7 @@
   "discord"
   "brave"
   "zoom-us"
-  "ventoy"
+  "ventoy 1.1.05"
   ];
 
   # manage symlink file or directory
