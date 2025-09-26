@@ -31,6 +31,8 @@
     syncthing
     tealdeer
     cowsay
+    cbonsai
+    cmatrix
 
 
   ];
