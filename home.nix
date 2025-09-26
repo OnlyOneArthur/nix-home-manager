@@ -24,6 +24,8 @@
     zathura
     john
     johnny
+    wine
+    bottles
 
    
 
