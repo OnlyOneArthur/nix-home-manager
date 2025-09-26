@@ -14,7 +14,7 @@
     yazi
     vlc
     bat
-    bat-extras.prettybat
+    bat-extras.core
 
    
 
