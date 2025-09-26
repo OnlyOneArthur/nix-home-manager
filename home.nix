@@ -29,7 +29,6 @@
     lolcat
     thunderbird
     syncthing
-    ventoy
 
 
   ];
@@ -42,8 +41,6 @@
   "discord"
   "brave"
   "zoom-us"
-  "ventoy 1.1.05"
-  "ventoy"
   ];
 
   # manage symlink file or directory
