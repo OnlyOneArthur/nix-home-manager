@@ -12,6 +12,7 @@
     spotify
     discord
     yazi
+    vlc
 
    
 
