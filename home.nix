@@ -17,8 +17,8 @@
     bat-extras.core
     blender
     anki
-    hascat
-    hascat-utils
+    hashcat
+    hashcat-utils
     anki
     lazygit
     zathura
