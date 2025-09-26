@@ -33,6 +33,7 @@
     cowsay
     cbonsai
     cmatrix
+    stegseek
 
 
   ];
