@@ -22,6 +22,8 @@
     anki
     lazygit
     zathura
+    john
+    johnny
 
    
 
