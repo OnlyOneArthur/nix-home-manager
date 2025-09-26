@@ -15,6 +15,13 @@
     vlc
     bat
     bat-extras.core
+    blender
+    anki
+    hascat
+    hascat-utils
+    anki
+    lazygit
+    zathura
 
    
 
