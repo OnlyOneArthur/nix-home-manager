@@ -13,6 +13,8 @@
     discord
     yazi
     vlc
+    bat
+    bat-extras.prettybat
 
    
 
