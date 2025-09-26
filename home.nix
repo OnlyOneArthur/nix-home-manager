@@ -42,6 +42,7 @@
   "discord"
   "brave"
   "zoom-us"
+  "ventoy"
   ];
 
   # manage symlink file or directory
