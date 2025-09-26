@@ -28,8 +28,9 @@
     bottles
     lolcat
     thunderbird
+    syncthing
+    tree
 
-   
 
   ];
   
