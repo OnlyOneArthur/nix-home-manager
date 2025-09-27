@@ -61,6 +61,7 @@
      ".config/Thunar".source = ./dotfiles/Thunar;
      ".config/lazygit".source = ./dotfiles/lazygit;
      ".config/vlc".source = ./dotfiles/vlc;
+     ".config/btop".source = ./dotfiles/btop;
   };
 
   home.sessionVariables = {
