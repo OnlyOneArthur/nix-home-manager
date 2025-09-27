@@ -65,6 +65,7 @@
      ".config/btop".source = ./dotfiles/btop;
      ".config/containers".source = ./dotfiles/containers;
      ".config/blender".source = ./dotfiles/blender;
+     ".config/weechat".source = ./dotfiles/weechat;
   };
 
   home.sessionVariables = {
