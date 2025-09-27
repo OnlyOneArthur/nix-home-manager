@@ -63,6 +63,7 @@
      ".config/lazygit".source = ./dotfiles/lazygit;
      ".config/vlc".source = ./dotfiles/vlc;
      ".config/btop".source = ./dotfiles/btop;
+     ".config/containers".source = ./dotfiles/containers;
   };
 
   home.sessionVariables = {
