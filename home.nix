@@ -37,6 +37,7 @@
     wget
     weechat
     spice-vdagent
+    btop
 
 
   ];
