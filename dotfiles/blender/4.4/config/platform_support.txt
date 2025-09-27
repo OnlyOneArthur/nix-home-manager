@@ -1,0 +1,5 @@
+{Intel/Mesa Intel(R) Iris(R) Xe Graphics (RPL-P)/4.6 (Core Profile) Mesa 25.1.2-arch1.1}=SUPPORTED
+{Intel/Mesa Intel(R) Iris(R) Xe Graphics (RPL-P)/4.6 (Core Profile) Mesa 25.1.3-arch1.2}=SUPPORTED
+{Intel/Mesa Intel(R) Iris(R) Xe Graphics (RPL-P)/4.6 (Core Profile) Mesa 25.1.3-arch1.3}=SUPPORTED
+{Intel/Mesa Intel(R) Iris(R) Xe Graphics (RPL-P)/4.6 (Core Profile) Mesa 25.1.4-arch1.1}=SUPPORTED
+{Intel/Mesa Intel(R) Iris(R) Xe Graphics (RPL-P)/4.6 (Core Profile) Mesa 25.1.5-arch1.1}=SUPPORTED

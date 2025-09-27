@@ -1,0 +1,7 @@
+[Bookmarks]
+[Recent]
+/home/arthur/Documents/blender_file/
+/home/arthur/Downloads/
+/run/media/arthur/D/blend/
+/usr/share/fonts/TTF/
+/home/arthur/Downloads/source/

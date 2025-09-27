@@ -1,0 +1,29 @@
+schema_version = "1.0.0"
+
+id = "lfs_camera_plane"
+version = "1.6.0"
+name = "Camera Plane"
+tagline = "Import images and stick them to the camera"
+maintainer = "Les Fées Spéciales <voeu@les-fees-speciales.coop>"
+type = "add-on"
+website = "https://gitlab.com/lfs.coop/blender/camera-plane"
+tags = ["3D View", "Import-Export", "Object", "Camera"]
+blender_version_min = "4.2.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
+copyright = ["2016-2024 Les Fées Spéciales"]
+
+[permissions]
+files = "Import images from disk"
+
+[build]
+paths_exclude_pattern = [
+  "__pycache__/",
+  "/.git/",
+  "docs/",
+  ".*",
+  "*.blend",
+  "*.md",
+  "*.png",
+  "*.zip",
+]

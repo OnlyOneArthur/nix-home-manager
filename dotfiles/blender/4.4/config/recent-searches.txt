@@ -1,0 +1,7 @@
+ 0 coklat
+   orange
+   Praktek1-Logo_Image_Reference
+  BézierCurve
+
+  BézierCircle
+Handle_Front

@@ -64,6 +64,7 @@
      ".config/vlc".source = ./dotfiles/vlc;
      ".config/btop".source = ./dotfiles/btop;
      ".config/containers".source = ./dotfiles/containers;
+     ".config/blender".source = ./dotfiles/blender;
   };
 
   home.sessionVariables = {
