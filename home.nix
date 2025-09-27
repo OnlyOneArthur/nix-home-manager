@@ -54,6 +54,8 @@
 
   # manage symlink file or directory
   home.file = {
+
+  # directory symlink
      ".config/nvim".source = ./dotfiles/nvim;
      ".config/kitty".source = ./dotfiles/kitty;
      ".config/spotify".source = ./dotfiles/spotify;
