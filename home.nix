@@ -34,6 +34,8 @@
     cbonsai
     cmatrix
     stegseek
+    wget
+    weechat
 
 
   ];
