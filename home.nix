@@ -68,7 +68,6 @@
      ".config/containers".source = ./dotfiles/containers;
      ".config/blender".source = ./dotfiles/blender;
      ".config/weechat".source = ./dotfiles/weechat;
-     ".config/discord".source = ./dotfiles/discord;
   };
 
   home.sessionVariables = {
