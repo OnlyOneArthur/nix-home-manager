@@ -36,6 +36,7 @@
     stegseek
     wget
     weechat
+    spice-vdagent
 
 
   ];
