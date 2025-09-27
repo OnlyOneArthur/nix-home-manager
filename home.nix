@@ -60,6 +60,7 @@
      ".config/waybar".source = ./dotfiles/waybar;
      ".config/Thunar".source = ./dotfiles/Thunar;
      ".config/lazygit".source = ./dotfiles/lazygit;
+     ".config/vlc".source = ./dotfiles/vlc;
   };
 
   home.sessionVariables = {
