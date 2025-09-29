@@ -68,6 +68,7 @@
      ".config/containers".source = ./dotfiles/containers;
      ".config/blender".source = ./dotfiles/blender;
      ".config/weechat".source = ./dotfiles/weechat;
+     ".zshrc".source = ./dotfiles/.zshrc;
   };
 
   home.sessionVariables = {
