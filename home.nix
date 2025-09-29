@@ -38,6 +38,7 @@
     weechat
     spice-vdagent
     btop
+    htop
 
 
   ];
