@@ -69,6 +69,7 @@
      ".config/blender".source = ./dotfiles/blender;
      ".config/weechat".source = ./dotfiles/weechat;
      ".zshrc".source = ./dotfiles/.zshrc;
+     ".poshthemes".source = ./dotfiles/.poshthemes;
   };
 
   home.sessionVariables = {

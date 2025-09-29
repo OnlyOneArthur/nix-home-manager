@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#000000",
+          "foreground": "#dd1e1e",
+          "style": "diamond",
+          "template": " \u26a1",
+          "type": "root"
+        },
+        {
+          "background": "#000000",
+          "foreground": "#ffffff",
+          "properties": {
+            "arch": "\uf303"
+          },
+          "style": "diamond",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "background": "#272727",
+          "foreground": "#43CCEA",
+          "properties": {
+            "folder_icon": "\ue5fe",
+            "folder_separator_icon": " <#000000>\ue0bd </>",
+            "home_icon": "\ueb06",
+            "style": "agnoster_short"
+          },
+          "style": "diamond",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "#272727",
+          "foreground": "#00ff0d",
+          "properties": {
+            "fetch_status": true
+          },
+          "style": "diamond",
+          "template": "<#000000>\ue0b1 </>{{ .HEAD }}{{ if .Staging.Changed }}<#FF6F00> \uf046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#00ff0d",
+          "foreground_templates": ["{{ if gt .Code 0 }}#ff0000{{ end }}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "diamond",
+          "template": "\uf432 ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}
