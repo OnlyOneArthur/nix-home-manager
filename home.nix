@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
 
+
+let
+  home = config.home.homeDirectory;
+  repo = "${home}/nix-home-manager";
+  dot  = "${repo}/dotfiles";
+  out  = p: config.lib.file.mkOutOfStoreSymlink p;
+in
 {
   home.username = "arthur";
   home.homeDirectory = "/home/arthur";
@@ -64,7 +71,7 @@
      ".config/Thunar".source = ./dotfiles/Thunar;
      ".config/lazygit".source = ./dotfiles/lazygit;
      ".config/vlc".source = ./dotfiles/vlc;
-     ".config/btop".source = ./dotfiles/btop;
+     ".config/btop".source = out "${dot}/btop"; # mkOutOfStoreSymlink
      ".config/containers".source = ./dotfiles/containers;
      ".config/blender".source = ./dotfiles/blender;
      ".config/weechat".source = ./dotfiles/weechat;
