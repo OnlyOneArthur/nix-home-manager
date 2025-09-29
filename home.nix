@@ -45,6 +45,7 @@ in
     weechat
     spice-vdagent
     btop
+    zsh
 
 
   ];
@@ -79,6 +80,8 @@ in
      ".poshthemes".source = ./dotfiles/.poshthemes;
      ".profile".source = ./dotfiles/.profile;
      ".config/nix".source = ./dotfiles/nix;
+
+   # bash script
   };
 
   home.sessionVariables = {
