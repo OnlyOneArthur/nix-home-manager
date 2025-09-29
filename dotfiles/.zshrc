@@ -3,7 +3,7 @@
 #### =========================
 
 # ----- Prompt via oh-my-posh (single prompt owner; no zsh themes) -----
-eval "$(oh-my-posh init zsh --config /home/arthur/.poshthemes/themes/tokyonight_storm.omp.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.poshthemes/themes/tokyonight_storm.omp.json)"
 
 # ----- History tuning -----
 HISTFILE=~/.zsh_history
