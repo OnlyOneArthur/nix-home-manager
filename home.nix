@@ -70,6 +70,7 @@
      ".config/weechat".source = ./dotfiles/weechat;
      ".zshrc".source = ./dotfiles/.zshrc;
      ".poshthemes".source = ./dotfiles/.poshthemes;
+     ".profile".source = ./dotfiles/.profile;
   };
 
   home.sessionVariables = {
