@@ -83,7 +83,6 @@ in
      ".config/nix".source = ./dotfiles/nix;
 
     # bash script
-     ".local/bin".source = ./dotfiles/bin;
   };
 
   home.sessionVariables = {
