@@ -48,7 +48,6 @@ alias dirmove='autorenamenix.sh'
 
 # ----- Environment / PATHs you use -----
 export LIBVIRT_DEFAULT_URI='qemu:///system'
-export PATH="$PATH:/home/arthur/.local/bin"     # pipx
 export PATH="$HOME/.npm-global/bin:$PATH"       # npm global
 
 # =========================

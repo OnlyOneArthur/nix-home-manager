@@ -45,7 +45,7 @@ in
     weechat
     spice-vdagent
     btop
-    zsh
+    notion-app-enhanced
 
 
   ];
@@ -58,6 +58,7 @@ in
   "discord"
   "brave"
   "zoom-us"
+  "notion-app-enhanced"
   ];
 
   # manage symlink file or directory
@@ -81,7 +82,8 @@ in
      ".profile".source = ./dotfiles/.profile;
      ".config/nix".source = ./dotfiles/nix;
 
-   # bash script
+    # bash script
+     ".local/bin".source = ./dotfiles/bin;
   };
 
   home.sessionVariables = {
