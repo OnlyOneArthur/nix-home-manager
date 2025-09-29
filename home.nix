@@ -71,6 +71,7 @@
      ".zshrc".source = ./dotfiles/.zshrc;
      ".poshthemes".source = ./dotfiles/.poshthemes;
      ".profile".source = ./dotfiles/.profile;
+     ".config/nix".source = ./dotfiles/nix;
   };
 
   home.sessionVariables = {
