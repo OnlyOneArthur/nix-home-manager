@@ -45,6 +45,7 @@ in
     weechat
     spice-vdagent
     btop
+    processing
 
 
   ];
