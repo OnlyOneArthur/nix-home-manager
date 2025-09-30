@@ -85,7 +85,6 @@ in
 
      # bash script
      ".local/bin/nixAutiomation.sh".source = ./script/nixAutomation.sh;
-     executable = true;
   };
 
   home.sessionVariables = {
