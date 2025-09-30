@@ -18,11 +18,12 @@ let
       name = "gitpush";
       runtimeInputs = [ pkgs.git];
       text = ''
+        branch=$(git rev-parse --abbrev-ref HEAD)
+        git add .
         read -r -p "Commit message: " msg
 
-        git add .
         git commit -m "$msg"
-        git push -u origin master
+        git push -u origin "$branch"
       '';
     }
   # another script here
