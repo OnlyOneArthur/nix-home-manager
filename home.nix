@@ -82,7 +82,8 @@ in
      ".profile".source = ./dotfiles/.profile;
      ".config/nix".source = ./dotfiles/nix;
 
-    # bash script
+     # bash script
+     ".local/bin/nixAutiomation.sh".source = ./script/nixAutomation.sh;
   };
 
   home.sessionVariables = {
@@ -90,6 +91,9 @@ in
     XDG_ICON_DIRS = "${config.home.profileDirectory}/share/icons:/usr/share:/usr/share/icons";
     EDITOR = "nvim";
   };
+
+  # export the local/bin path into every shell that recognize
+  home.sessionPath = ["$HOME/.local/bin"];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
