@@ -45,6 +45,7 @@ in
     weechat
     spice-vdagent
     btop
+    neovim
 
 
   ];
@@ -87,7 +88,7 @@ in
   home.sessionVariables = {
     XDG_DATA_DIRS = "${config.home.profileDirectory}/share:/usr/local/share:/usr/share";
     XDG_ICON_DIRS = "${config.home.profileDirectory}/share/icons:/usr/share:/usr/share/icons";
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
