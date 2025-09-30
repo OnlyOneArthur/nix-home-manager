@@ -16,7 +16,7 @@ let
   scripts = [
     {
       name = "gitpush";
-      runtimeInputs = [ pkgs.git pkgs.home-manager ];
+      runtimeInputs = [ pkgs.git];
       text = ''
         read -r -p "Commit message: " msg
 
@@ -25,6 +25,7 @@ let
         git push -u origin master
       '';
     }
+  # another script here
 
 
   ];
