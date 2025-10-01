@@ -28,6 +28,13 @@ let
       '';
     }
    # another script here
+    {
+        name = "pro";
+        runtimeInputs = [];
+        text = ''
+        cd ~/Projects/ || exit
+        nvim '';
+    }
 
 
   ];
