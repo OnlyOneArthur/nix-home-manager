@@ -32,7 +32,7 @@ let
         name = "pro";
         runtimeInputs = [pkgs.neovim];
         text = ''
-        cd $HOME/Projects/ || exit
+        cd "$HOME/Projects" || exit
         nvim '';
     }
 
