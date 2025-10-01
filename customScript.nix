@@ -30,9 +30,9 @@ let
    # another script here
     {
         name = "pro";
-        runtimeInputs = [];
+        runtimeInputs = [pkgs.neovim];
         text = ''
-        cd ~/Projects/ || exit
+        cd $HOME/Projects/ || exit
         nvim '';
     }
 
