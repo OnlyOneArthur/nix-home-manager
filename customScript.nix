@@ -13,6 +13,7 @@ let
     };
 
   # Define your scripts here
+  # script to automate git workflow
   scripts = [
     {
       name = "gitpush";
@@ -26,7 +27,7 @@ let
         git push -u origin "$branch"
       '';
     }
-  # another script here
+   # another script here
 
 
   ];
