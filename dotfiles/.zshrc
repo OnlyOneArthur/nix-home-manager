@@ -39,10 +39,6 @@ alias cat='bat'
 # my custom aliases for script
 export PATH="$HOME/.local/bin:$PATH"
 alias obsync='obsidian-sync'
-# alias pro='project.sh'
-alias opencode='launchcode.sh'
-alias push='autopushconfig'
-alias dirmove='autorenamenix.sh'
 
 # ----- Environment / PATHs you use -----
 export LIBVIRT_DEFAULT_URI='qemu:///system'
