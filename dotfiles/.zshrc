@@ -42,7 +42,6 @@ alias obsync='obsidian-sync'
 # alias pro='project.sh'
 alias opencode='launchcode.sh'
 alias push='autopushconfig'
-alias obsidian='autoopenobsidian'
 alias dirmove='autorenamenix.sh'
 
 # ----- Environment / PATHs you use -----

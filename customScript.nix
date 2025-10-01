@@ -54,7 +54,17 @@ let
       home-manager switch --flake .#arthur
       '';
 
-      }
+    }
+     # script to auto open obsidian nvim in my obsidian vault dir
+    {
+      name = "obsidian";
+      runtimeInputs = [];
+      text = ''
+      cd "$HOME/Documents/Obsidian_vault/" || exit
+      nvim
+      '';
+
+    }
 
 
   ];
