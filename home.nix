@@ -47,7 +47,6 @@ in
     btop
     neovim
     htop
-    obs-studio
 
 
   ];
