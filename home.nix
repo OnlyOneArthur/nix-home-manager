@@ -83,7 +83,6 @@ in
      ".profile".source = ./dotfiles/.profile;
      ".config/nix".source = ./dotfiles/nix;
      ".gitconfig".source = ./dotfiles/.gitconfig;
-     ".gitconfig".source = ./dotfiles/.gitconfig;
 
   };
 
