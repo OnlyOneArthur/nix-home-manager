@@ -82,12 +82,13 @@ in
      ".poshthemes".source = ./dotfiles/.poshthemes;
      ".profile".source = ./dotfiles/.profile;
      ".config/nix".source = ./dotfiles/nix;
+     ".gitconfig".source = ./dotfiles/.gitconfig;
 
   };
-  home.file.".gitconfig" = {
-      source = ./dotfiles/.gitconfig;
-      force = true;
-    };
+  # home.file.".gitconfig" = {
+  #     source = ./dotfiles/.gitconfig;
+  #     force = true;
+  #   };
 
   home.sessionVariables = {
     XDG_DATA_DIRS = "${config.home.profileDirectory}/share:/usr/local/share:/usr/share";
