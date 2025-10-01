@@ -46,6 +46,7 @@ in
     spice-vdagent
     btop
     neovim
+    htop
 
 
   ];
