@@ -39,7 +39,7 @@ let
     {
 
       name = "nixpush";
-      runtimeInputs = [];
+      runtimeInputs = [pkgs.git];
       text = ''
       cd "$HOME/nix-home-manager" || exit
 
