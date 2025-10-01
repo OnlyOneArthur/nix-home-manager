@@ -43,7 +43,6 @@ alias obsync='obsidian-sync'
 alias opencode='launchcode.sh'
 alias push='autopushconfig'
 alias obsidian='autoopenobsidian'
-alias nixpush='nixAutomation.sh'
 alias dirmove='autorenamenix.sh'
 
 # ----- Environment / PATHs you use -----

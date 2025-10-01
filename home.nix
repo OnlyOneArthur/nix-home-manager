@@ -82,8 +82,6 @@ in
      ".profile".source = ./dotfiles/.profile;
      ".config/nix".source = ./dotfiles/nix;
 
-     # bash script
-     ".local/bin/nixAutomation.sh".source = ./script/nixAutomation.sh;
   };
 
   home.sessionVariables = {
