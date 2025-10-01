@@ -35,6 +35,26 @@ let
         cd "$HOME/Projects" || exit
         nvim '';
     }
+   # script for nix automation push
+    {
+
+      name = "nixpush";
+      runtimeInputs = [];
+      text = ''
+      cd "$HOME/nix-home-manager" || exit
+
+      git add .
+
+      read -r -p "Enter commit message: " msg
+
+      git commit -m "$msg"
+
+      git push -u origin master
+
+      home-manager switch --flake .#arthur
+      '';
+
+      }
 
 
   ];
