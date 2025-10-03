@@ -205,5 +205,5 @@ zinit light zsh-users/zsh-autosuggestions
 # =========================
 # zmodload zsh/zprof   # then run `zprof` in a fresh shell
 # After startup, run:   zinit times
-
+# nix thing
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
