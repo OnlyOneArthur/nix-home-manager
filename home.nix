@@ -46,6 +46,7 @@ in
     btop
     neovim
     htop
+    qbittorrent
 
 
   ];
