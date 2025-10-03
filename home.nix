@@ -32,7 +32,6 @@ in
     john
     johnny
     wine
-    bottles
     lolcat
     thunderbird
     syncthing
