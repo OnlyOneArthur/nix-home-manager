@@ -85,7 +85,7 @@ in
      ".config/waybar".source = ./dotfiles/waybar;
      ".config/Thunar".source = ./dotfiles/Thunar;
      ".config/lazygit".source = ./dotfiles/lazygit;
-     ".config/vlc".source = ./dotfiles/vlc;
+     ".config/vlc".source =  out "${dot}/vlc"; # mkOutOfStoreSymlink
      ".config/btop".source = out "${dot}/btop"; # mkOutOfStoreSymlink
      ".config/containers".source = ./dotfiles/containers;
      ".config/blender".source = ./dotfiles/blender;
