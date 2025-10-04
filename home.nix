@@ -50,6 +50,10 @@ in
     fastfetch
     fd
     ripgrep
+    figlet
+    lsd
+    plocate
+    pipx
 
 
   ];
