@@ -12,7 +12,7 @@ let
     export GDK_BACKEND=x11
     export AWT_TOOLKIT=MToolkit
     export _JAVA_AWT_WM_NONREPARENTING=1
-    exec ${nixglBin}/bin/nixGL ${pkgs.processing}/bin/processing "$@"
+    exec ${nixglBin}/bin/nixGLIntel ${pkgs.processing}/bin/processing "$@"
   '';
 in
 {
