@@ -47,6 +47,7 @@ in
     neovim
     htop
     qbittorrent
+    fastfetch
 
 
   ];
