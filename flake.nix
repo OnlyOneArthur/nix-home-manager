@@ -7,9 +7,10 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-     # nixgl
-      nixgl.url = "github:guibou/nixGL";
     };
+
+    # nixgl
+    nixgl.url = "github:guibou/nixGL";
   };
 
   outputs =
