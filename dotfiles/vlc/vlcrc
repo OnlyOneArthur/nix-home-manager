@@ -69,6 +69,32 @@
 # Refresh period in ms (integer)
 #marq-refresh=1000
 
+[remoteosd] # Remote-OSD over VNC
+
+# VNC Host (string)
+#rmtosd-host=myvdr
+
+# VNC Port (integer)
+#rmtosd-port=20001
+
+# VNC Password (string)
+#rmtosd-password=
+
+# VNC poll interval (integer)
+#rmtosd-update=1000
+
+# VNC polling (boolean)
+#rmtosd-vnc-polling=0
+
+# Mouse events (boolean)
+#rmtosd-mouse-events=0
+
+# Key events (boolean)
+#rmtosd-key-events=0
+
+# Alpha transparency value (default 255) (integer)
+#rmtosd-alpha=255
+
 [subsdelay] # Subtitle delay
 
 # Delay calculation mode (integer)
@@ -326,6 +352,42 @@
 # Open GL/GLES hardware converter (string)
 #glconv=
 
+# Rendering intent for color conversion (integer)
+#rendering-intent=1
+
+# Display primaries (integer)
+#target-prim=0
+
+# Display gamma / transfer function (integer)
+#target-trc=0
+
+# Tone-mapping algorithm (integer)
+#tone-mapping=3
+
+# Tone-mapping parameter (float)
+#tone-mapping-param=0.000000
+
+# Highlight clipped pixels (boolean)
+#tone-mapping-warn=0
+
+# Dithering algorithm (integer)
+#dither-algo=-1
+
+# Dither depth override (0 = framebuffer depth) (integer)
+#dither-depth=0
+
+# Desaturation strength (float)
+#desat-strength=0.000000
+
+# Desaturation exponent (float)
+#desat-exponent=0.000000
+
+# Desaturation base (float)
+#desat-base=0.000000
+
+# Maximum brightness boost (float)
+#max-boost=0.000000
+
 [vmem] # Video memory output
 
 # Width (integer)
@@ -355,11 +417,6 @@
 
 [svcdsub] # Philips OGT (SVCD subtitle) decoder
 
-[gstdecode] # GStreamer Based Decoder
-
-# Use DecodeBin (boolean)
-#use-decodebin=1
-
 [subsdec] # Text subtitle decoder
 
 # Subtitle justification (integer)
@@ -381,15 +438,103 @@
 # Disable DVD subtitle transparency (boolean)
 #dvdsub-transparency=0
 
-[dav1d] # Dav1d video decoder
+[schroedinger] # Dirac video decoder using libschroedinger
 
-# Frames Threads (integer)
-#dav1d-thread-frames=0
+# Rate control method (string)
+#sout-schro-rate-control=
 
-[vpx] # WebM video decoder
+# Constant quality factor (float)
+#sout-schro-quality=-1.000000
 
-# Quality mode (integer)
-#sout-vpx-quality-mode=1000000
+# Noise Threshold (float)
+#sout-schro-noise-threshold=-1.000000
+
+# CBR bitrate (kbps) (integer)
+#sout-schro-bitrate=-1
+
+# Maximum bitrate (kbps) (integer)
+#sout-schro-max-bitrate=-1
+
+# Minimum bitrate (kbps) (integer)
+#sout-schro-min-bitrate=-1
+
+# GOP structure (string)
+#sout-schro-gop-structure=
+
+# GOP length (integer)
+#sout-schro-gop-length=-1
+
+# Chroma format (string)
+#sout-schro-chroma-fmt=420
+
+# Picture coding mode (string)
+#sout-schro-coding-mode=auto
+
+# Motion Vector precision (string)
+#sout-schro-mv-precision=
+
+# Size of motion compensation blocks (string)
+#sout-schro-motion-block-size=
+
+# Overlap of motion compensation blocks (string)
+#sout-schro-motion-block-overlap=
+
+# Three component motion estimation (integer)
+#sout-schro-me-combined=-1
+
+# Enable hierarchical Motion Estimation (integer)
+#sout-schro-enable-hierarchical-me=-1
+
+# Number of levels of downsampling (integer)
+#sout-schro-downsample-levels=-1
+
+# Enable Global Motion Estimation (integer)
+#sout-schro-enable-global-me=-1
+
+# Enable Phase Correlation Estimation (integer)
+#sout-schro-enable-phasecorr-me=-1
+
+# Intra picture DWT filter (string)
+#sout-schro-intra-wavelet=
+
+# Inter picture DWT filter (string)
+#sout-schro-inter-wavelet=
+
+# Number of DWT iterations (integer)
+#sout-schro-transform-depth=-1
+
+# Enable multiple quantizers (integer)
+#sout-schro-enable-multiquant=-1
+
+# Size of code blocks in each subband (string)
+#sout-schro-codeblock-size=
+
+# Prefilter (string)
+#sout-schro-filtering=
+
+# Amount of prefiltering (float)
+#sout-schro-filter-value=-1.000000
+
+# Enable Scene Change Detection (integer)
+#sout-schro-enable-scd=-1
+
+# perceptual weighting method (string)
+#sout-schro-perceptual-weighting=
+
+# perceptual distance (float)
+#sout-schro-perceptual-distance=-1.000000
+
+# Disable arithmetic coding (integer)
+#sout-schro-enable-noarith=-1
+
+# Horizontal slices per frame (integer)
+#sout-schro-horiz-slices=-1
+
+# Vertical slices per frame (integer)
+#sout-schro-vert-slices=-1
+
+# Force Profile (string)
+#sout-schro-force-profile=
 
 [speex] # Speex audio decoder
 
@@ -435,236 +580,6 @@
 # Scale factor (float)
 #svg-scale=-1.000000
 
-[x264] # H.264/MPEG-4 Part 10/AVC encoder (x264)
-
-# Maximum GOP size (integer)
-#sout-x264-keyint=250
-
-# Minimum GOP size (integer)
-#sout-x264-min-keyint=25
-
-# Use recovery points to close GOPs (boolean)
-#sout-x264-opengop=0
-
-# Enable compatibility hacks for Blu-ray support (boolean)
-#sout-x264-bluray-compat=0
-
-# Extra I-frames aggressivity (integer)
-#sout-x264-scenecut=40
-
-# B-frames between I and P (integer)
-#sout-x264-bframes=3
-
-# Adaptive B-frame decision (integer)
-#sout-x264-b-adapt=1
-
-# Influence (bias) B-frames usage (integer)
-#sout-x264-b-bias=0
-
-# Keep some B-frames as references (string)
-#sout-x264-bpyramid=normal
-
-# CABAC (boolean)
-#sout-x264-cabac=1
-
-# Use fullrange instead of TV colorrange (boolean)
-#sout-x264-fullrange=0
-
-# Number of reference frames (integer)
-#sout-x264-ref=3
-
-# Skip loop filter (boolean)
-#sout-x264-nf=0
-
-# Loop filter AlphaC0 and Beta parameters alpha:beta (string)
-#sout-x264-deblock=0:0
-
-# Strength of psychovisual optimization, default is "1.0:0.0" (string)
-#sout-x264-psy-rd=1.0:0.0
-
-# Use Psy-optimizations (boolean)
-#sout-x264-psy=1
-
-# H.264 level (string)
-#sout-x264-level=0
-
-# H.264 profile (string)
-#sout-x264-profile=high
-
-# Interlaced mode (boolean)
-#sout-x264-interlaced=0
-
-# Frame packing (integer)
-#sout-x264-frame-packing=-1
-
-# Force number of slices per frame (integer)
-#sout-x264-slices=0
-
-# Limit the size of each slice in bytes (integer)
-#sout-x264-slice-max-size=0
-
-# Limit the size of each slice in macroblocks (integer)
-#sout-x264-slice-max-mbs=0
-
-# HRD-timing information (string)
-#sout-x264-hrd=none
-
-# Set QP (integer)
-#sout-x264-qp=-1
-
-# Quality-based VBR (integer)
-#sout-x264-crf=23
-
-# Min QP (integer)
-#sout-x264-qpmin=10
-
-# Max QP (integer)
-#sout-x264-qpmax=51
-
-# Max QP step (integer)
-#sout-x264-qpstep=4
-
-# Average bitrate tolerance (float)
-#sout-x264-ratetol=1.000000
-
-# Max local bitrate (integer)
-#sout-x264-vbv-maxrate=0
-
-# VBV buffer (integer)
-#sout-x264-vbv-bufsize=0
-
-# Initial VBV buffer occupancy (float)
-#sout-x264-vbv-init=0.900000
-
-# QP factor between I and P (float)
-#sout-x264-ipratio=1.400000
-
-# QP factor between P and B (float)
-#sout-x264-pbratio=1.300000
-
-# QP difference between chroma and luma (integer)
-#sout-x264-chroma-qp-offset=0
-
-# Multipass ratecontrol (integer)
-#sout-x264-pass=0
-
-# QP curve compression (float)
-#sout-x264-qcomp=0.600000
-
-# Reduce fluctuations in QP (float)
-#sout-x264-cplxblur=20.000000
-
-# Reduce fluctuations in QP (float)
-#sout-x264-qblur=0.500000
-
-# How AQ distributes bits (integer)
-#sout-x264-aq-mode=1
-
-# Strength of AQ (float)
-#sout-x264-aq-strength=1.000000
-
-# Partitions to consider (string)
-#sout-x264-partitions=normal
-
-# Direct MV prediction mode (string)
-#sout-x264-direct=spatial
-
-# Direct prediction size (integer)
-#sout-x264-direct-8x8=1
-
-# Weighted prediction for B-frames (boolean)
-#sout-x264-weightb=1
-
-# Weighted prediction for P-frames (integer)
-#sout-x264-weightp=2
-
-# Integer pixel motion estimation method (string)
-#sout-x264-me=hex
-
-# Maximum motion vector search range (integer)
-#sout-x264-merange=16
-
-# Maximum motion vector length (integer)
-#sout-x264-mvrange=-1
-
-# Minimum buffer space between threads (integer)
-#sout-x264-mvrange-thread=-1
-
-# Subpixel motion estimation and partition decision quality (integer)
-#sout-x264-subme=7
-
-# Decide references on a per partition basis (boolean)
-#sout-x264-mixed-refs=1
-
-# Chroma in motion estimation (boolean)
-#sout-x264-chroma-me=1
-
-# Adaptive spatial transform size (boolean)
-#sout-x264-8x8dct=1
-
-# Trellis RD quantization (integer)
-#sout-x264-trellis=1
-
-# Framecount to use on frametype lookahead (integer)
-#sout-x264-lookahead=40
-
-# Use Periodic Intra Refresh (boolean)
-#sout-x264-intra-refresh=0
-
-# Use mb-tree ratecontrol (boolean)
-#sout-x264-mbtree=1
-
-# Early SKIP detection on P-frames (boolean)
-#sout-x264-fast-pskip=1
-
-# Coefficient thresholding on P-frames (boolean)
-#sout-x264-dct-decimate=1
-
-# Noise reduction (integer)
-#sout-x264-nr=0
-
-# Inter luma quantization deadzone (integer)
-#sout-x264-deadzone-inter=21
-
-# Intra luma quantization deadzone (integer)
-#sout-x264-deadzone-intra=11
-
-# Non-deterministic optimizations when threaded (boolean)
-#sout-x264-non-deterministic=0
-
-# CPU optimizations (boolean)
-#sout-x264-asm=1
-
-# PSNR computation (boolean)
-#sout-x264-psnr=0
-
-# SSIM computation (boolean)
-#sout-x264-ssim=0
-
-# Quiet mode (boolean)
-#sout-x264-quiet=0
-
-# SPS and PPS id numbers (integer)
-#sout-x264-sps-id=0
-
-# Access unit delimiters (boolean)
-#sout-x264-aud=0
-
-# Statistics (boolean)
-#sout-x264-verbose=0
-
-# Filename for 2 pass stats file (string)
-#sout-x264-stats=x264_2pass.log
-
-# Default preset setting used (string)
-#sout-x264-preset=
-
-# Default tune setting used (string)
-#sout-x264-tune=
-
-# x264 advanced options (string)
-#sout-x264-options=
-
 [libass] # Subtitle renderers using libass
 
 # Additional fonts directory (string)
@@ -706,76 +621,6 @@
 # Encoding quality (integer)
 #sout-theora-quality=2
 
-[aribsub] # ARIB subtitles decoder
-
-# Ignore ruby (furigana) (boolean)
-#aribsub-ignore-ruby=0
-
-# Use Core Text renderer (boolean)
-#aribsub-use-coretext=0
-
-[qsv] # Intel QuickSync Video encoder for MPEG4-Part10/MPEG2 (aka H.264/H.262)
-
-# Enable software mode (boolean)
-#sout-qsv-software=0
-
-# Codec Profile (string)
-#sout-qsv-h264-profile=unspecified
-
-# Codec Level (string)
-#sout-qsv-h264-level=unspecified
-
-# Codec Profile (string)
-#sout-qsv-mpeg2-profile=unspecified
-
-# Codec Level (string)
-#sout-qsv-mpeg2-level=unspecified
-
-# Group of Picture size (integer)
-#sout-qsv-gop-size=32
-
-# Group of Picture Reference Distance (integer)
-#sout-qsv-gop-refdist=4
-
-# IDR interval (integer)
-#sout-qsv-idr-interval=0
-
-# Target Usage (string)
-#sout-qsv-target-usage=quality
-
-# Rate Control Method (string)
-#sout-qsv-rc-method=vbr
-
-# Quantization parameter (integer)
-#sout-qsv-qp=0
-
-# Quantization parameter for I-frames (integer)
-#sout-qsv-qpi=0
-
-# Quantization parameter for P-frames (integer)
-#sout-qsv-qpp=0
-
-# Quantization parameter for B-frames (integer)
-#sout-qsv-qpb=0
-
-# Maximum Bitrate (integer)
-#sout-qsv-bitrate-max=0
-
-# Accuracy of RateControl (integer)
-#sout-qsv-accuracy=0
-
-# Convergence time of 'avbr' RateControl (integer)
-#sout-qsv-convergence=0
-
-# Number of slices per frame (integer)
-#sout-qsv-num-slice=0
-
-# Number of reference frames (integer)
-#sout-qsv-num-ref-frame=0
-
-# Number of parallel operations (integer)
-#sout-qsv-async-depth=4
-
 [jpeg] # JPEG image decoder
 
 # Quality level (integer)
@@ -785,6 +630,58 @@
 
 # Subtitle justification (integer)
 #ttml-align=0
+
+[kate] # Kate overlay decoder
+
+# Formatted Subtitles (boolean)
+#kate-formatted=1
+
+# Use Tiger for rendering (boolean)
+#kate-use-tiger=1
+
+# Rendering quality (float)
+#kate-tiger-quality=1.000000
+
+# Default font description (string)
+#kate-tiger-default-font-desc=
+
+# Default font effect (integer)
+#kate-tiger-default-font-effect=0
+
+# Default font effect strength (float)
+#kate-tiger-default-font-effect-strength=0.500000
+
+# Default font color (integer)
+#kate-tiger-default-font-color=16777215
+
+# Default font alpha (integer)
+#kate-tiger-default-font-alpha=255
+
+# Default background color (integer)
+#kate-tiger-default-background-color=16777215
+
+# Default background alpha (integer)
+#kate-tiger-default-background-alpha=0
+
+[fluidsynth] # FluidSynth MIDI synthesizer
+
+# SoundFont file (string)
+#soundfont=
+
+# Chorus (boolean)
+#synth-chorus=1
+
+# Synthesis gain (float)
+#synth-gain=0.500000
+
+# Polyphony (integer)
+#synth-polyphony=256
+
+# Reverb (boolean)
+#synth-reverb=1
+
+# Sample rate (integer)
+#synth-sample-rate=44100
 
 [a52] # ATSC A/52 (AC-3) audio decoder
 
@@ -930,241 +827,6 @@
 # CBR encoding (boolean)
 #sout-vorbis-cbr=0
 
-[dca] # DTS Coherent Acoustics audio decoder
-
-# DTS dynamic range compression (boolean)
-#dts-dynrng=1
-
-[x26410b] # H.264/MPEG-4 Part 10/AVC encoder (x264 10-bit)
-
-# Maximum GOP size (integer)
-#sout-x26410b-keyint=250
-
-# Minimum GOP size (integer)
-#sout-x26410b-min-keyint=25
-
-# Use recovery points to close GOPs (boolean)
-#sout-x26410b-opengop=0
-
-# Enable compatibility hacks for Blu-ray support (boolean)
-#sout-x26410b-bluray-compat=0
-
-# Extra I-frames aggressivity (integer)
-#sout-x26410b-scenecut=40
-
-# B-frames between I and P (integer)
-#sout-x26410b-bframes=3
-
-# Adaptive B-frame decision (integer)
-#sout-x26410b-b-adapt=1
-
-# Influence (bias) B-frames usage (integer)
-#sout-x26410b-b-bias=0
-
-# Keep some B-frames as references (string)
-#sout-x26410b-bpyramid=normal
-
-# CABAC (boolean)
-#sout-x26410b-cabac=1
-
-# Use fullrange instead of TV colorrange (boolean)
-#sout-x26410b-fullrange=0
-
-# Number of reference frames (integer)
-#sout-x26410b-ref=3
-
-# Skip loop filter (boolean)
-#sout-x26410b-nf=0
-
-# Loop filter AlphaC0 and Beta parameters alpha:beta (string)
-#sout-x26410b-deblock=0:0
-
-# Strength of psychovisual optimization, default is "1.0:0.0" (string)
-#sout-x26410b-psy-rd=1.0:0.0
-
-# Use Psy-optimizations (boolean)
-#sout-x26410b-psy=1
-
-# H.264 level (string)
-#sout-x26410b-level=0
-
-# H.264 profile (string)
-#sout-x26410b-profile=high
-
-# Interlaced mode (boolean)
-#sout-x26410b-interlaced=0
-
-# Frame packing (integer)
-#sout-x26410b-frame-packing=-1
-
-# Force number of slices per frame (integer)
-#sout-x26410b-slices=0
-
-# Limit the size of each slice in bytes (integer)
-#sout-x26410b-slice-max-size=0
-
-# Limit the size of each slice in macroblocks (integer)
-#sout-x26410b-slice-max-mbs=0
-
-# HRD-timing information (string)
-#sout-x26410b-hrd=none
-
-# Set QP (integer)
-#sout-x26410b-qp=-1
-
-# Quality-based VBR (integer)
-#sout-x26410b-crf=23
-
-# Min QP (integer)
-#sout-x26410b-qpmin=10
-
-# Max QP (integer)
-#sout-x26410b-qpmax=51
-
-# Max QP step (integer)
-#sout-x26410b-qpstep=4
-
-# Average bitrate tolerance (float)
-#sout-x26410b-ratetol=1.000000
-
-# Max local bitrate (integer)
-#sout-x26410b-vbv-maxrate=0
-
-# VBV buffer (integer)
-#sout-x26410b-vbv-bufsize=0
-
-# Initial VBV buffer occupancy (float)
-#sout-x26410b-vbv-init=0.900000
-
-# QP factor between I and P (float)
-#sout-x26410b-ipratio=1.400000
-
-# QP factor between P and B (float)
-#sout-x26410b-pbratio=1.300000
-
-# QP difference between chroma and luma (integer)
-#sout-x26410b-chroma-qp-offset=0
-
-# Multipass ratecontrol (integer)
-#sout-x26410b-pass=0
-
-# QP curve compression (float)
-#sout-x26410b-qcomp=0.600000
-
-# Reduce fluctuations in QP (float)
-#sout-x26410b-cplxblur=20.000000
-
-# Reduce fluctuations in QP (float)
-#sout-x26410b-qblur=0.500000
-
-# How AQ distributes bits (integer)
-#sout-x26410b-aq-mode=1
-
-# Strength of AQ (float)
-#sout-x26410b-aq-strength=1.000000
-
-# Partitions to consider (string)
-#sout-x26410b-partitions=normal
-
-# Direct MV prediction mode (string)
-#sout-x26410b-direct=spatial
-
-# Direct prediction size (integer)
-#sout-x26410b-direct-8x8=1
-
-# Weighted prediction for B-frames (boolean)
-#sout-x26410b-weightb=1
-
-# Weighted prediction for P-frames (integer)
-#sout-x26410b-weightp=2
-
-# Integer pixel motion estimation method (string)
-#sout-x26410b-me=hex
-
-# Maximum motion vector search range (integer)
-#sout-x26410b-merange=16
-
-# Maximum motion vector length (integer)
-#sout-x26410b-mvrange=-1
-
-# Minimum buffer space between threads (integer)
-#sout-x26410b-mvrange-thread=-1
-
-# Subpixel motion estimation and partition decision quality (integer)
-#sout-x26410b-subme=7
-
-# Decide references on a per partition basis (boolean)
-#sout-x26410b-mixed-refs=1
-
-# Chroma in motion estimation (boolean)
-#sout-x26410b-chroma-me=1
-
-# Adaptive spatial transform size (boolean)
-#sout-x26410b-8x8dct=1
-
-# Trellis RD quantization (integer)
-#sout-x26410b-trellis=1
-
-# Framecount to use on frametype lookahead (integer)
-#sout-x26410b-lookahead=40
-
-# Use Periodic Intra Refresh (boolean)
-#sout-x26410b-intra-refresh=0
-
-# Use mb-tree ratecontrol (boolean)
-#sout-x26410b-mbtree=1
-
-# Early SKIP detection on P-frames (boolean)
-#sout-x26410b-fast-pskip=1
-
-# Coefficient thresholding on P-frames (boolean)
-#sout-x26410b-dct-decimate=1
-
-# Noise reduction (integer)
-#sout-x26410b-nr=0
-
-# Inter luma quantization deadzone (integer)
-#sout-x26410b-deadzone-inter=21
-
-# Intra luma quantization deadzone (integer)
-#sout-x26410b-deadzone-intra=11
-
-# Non-deterministic optimizations when threaded (boolean)
-#sout-x26410b-non-deterministic=0
-
-# CPU optimizations (boolean)
-#sout-x26410b-asm=1
-
-# PSNR computation (boolean)
-#sout-x26410b-psnr=0
-
-# SSIM computation (boolean)
-#sout-x26410b-ssim=0
-
-# Quiet mode (boolean)
-#sout-x26410b-quiet=0
-
-# SPS and PPS id numbers (integer)
-#sout-x26410b-sps-id=0
-
-# Access unit delimiters (boolean)
-#sout-x26410b-aud=0
-
-# Statistics (boolean)
-#sout-x26410b-verbose=0
-
-# Filename for 2 pass stats file (string)
-#sout-x26410b-stats=x264_2pass.log
-
-# Default preset setting used (string)
-#sout-x26410b-preset=
-
-# Default tune setting used (string)
-#sout-x26410b-tune=
-
-# x264 advanced options (string)
-#sout-x26410b-options=
-
 [swscale] # Video scaling filter
 
 # Scaling mode (integer)
@@ -1249,6 +911,14 @@
 
 # No decoding of Dolby Surround (boolean)
 #headphone-dolby=0
+
+[spatialaudio] # Ambisonics renderer and binauralizer
+
+# Headphones mode (binaural) (boolean)
+#spatialaudio-headphones=0
+
+# HRTF file for the binauralization (string)
+#hrtf-file=
 
 [gain] # Gain control filter
 
@@ -1395,11 +1065,6 @@
 
 # Maximal volume level (float)
 #norm-max-level=2.000000
-
-[soxr] # soxr
-
-# Resampling quality (integer)
-#soxr-resampler-quality=2
 
 [speex_resampler] # Speex resampler
 
@@ -1573,6 +1238,29 @@
 
 # Prefix to show on output line (string)
 #sout-stats-prefix=stats
+
+[stream_out_chromecast] # Chromecast stream output
+
+# ? (string)
+#sout-chromecast-ip=
+
+# ? (integer)
+#sout-chromecast-port=8009
+
+# ? (boolean)
+#sout-chromecast-video=1
+
+# HTTP port (integer)
+#sout-chromecast-http-port=8010
+
+# Performance warning (integer)
+#sout-chromecast-show-perf-warning=1
+
+# Enable Audio passthrough (boolean)
+#sout-chromecast-audio-passthrough=0
+
+# Conversion quality (integer)
+#sout-chromecast-conversion-quality=1
 
 [stream_out_transcode] # Transcode stream output
 
@@ -1784,6 +1472,12 @@
 # Caching value (ms) (integer)
 #sout-rtp-caching=300
 
+# SRTP key (hexadecimal) (string)
+#sout-rtp-key=
+
+# SRTP salt (hexadecimal) (string)
+#sout-rtp-salt=
+
 # MP4A LATM (boolean)
 #sout-rtp-mp4a-latm=0
 
@@ -1939,6 +1633,12 @@
 # RTCP (local) port (integer)
 #rtcp-port=0
 
+# SRTP key (hexadecimal) (string)
+#srtp-key=
+
+# SRTP salt (hexadecimal) (string)
+#srtp-salt=
+
 # Maximum RTP sources (integer)
 #rtp-max-src=1
 
@@ -1958,6 +1658,38 @@
 
 # UDP Source timeout (sec) (integer)
 #udp-timeout=-1
+
+[live555] # RTP/RTSP/SDP demuxer (using Live555)
+
+# Use RTP over RTSP (TCP) (boolean)
+#rtsp-tcp=0
+
+# Client port (integer)
+#rtp-client-port=-1
+
+# Force multicast RTP via RTSP (boolean)
+#rtsp-mcast=0
+
+# Tunnel RTSP and RTP over HTTP (boolean)
+#rtsp-http=0
+
+# HTTP tunnel port (integer)
+#rtsp-http-port=80
+
+# Kasenna RTSP dialect (boolean)
+#rtsp-kasenna=0
+
+# WMServer RTSP dialect (boolean)
+#rtsp-wmserver=0
+
+# Username (string)
+#rtsp-user=
+
+# Password (string)
+#rtsp-pwd=
+
+# RTSP frame buffer size (integer)
+#rtsp-frame-buffer-size=250000
 
 [access_mms] # Microsoft Media Server (MMS) input
 
@@ -2042,14 +1774,6 @@
 # Use NIT for scanning services (boolean)
 #dvb-scan-nit=1
 
-[access_jack] # JACK audio input
-
-# Pace (boolean)
-#jack-input-use-vlc-pace=0
-
-# Auto connection (boolean)
-#jack-input-auto-connect=0
-
 [ftp] # FTP input
 
 # Username (string)
@@ -2060,6 +1784,17 @@
 
 # FTP account (string)
 #ftp-account=anonymous
+
+[smb] # SMB input
+
+# Username (string)
+#smb-user=
+
+# Password (string)
+#smb-pwd=
+
+# SMB domain (string)
+#smb-domain=
 
 [shm] # Shared memory framebuffer
 
@@ -2082,6 +1817,140 @@
 
 # Frame rate (float)
 #vdr-fps=25.000000
+
+[v4l2] # Video4Linux input
+
+# Video capture device (string)
+#v4l2-dev=/dev/video0
+
+# Standard (string)
+#v4l2-standard=
+
+# Video input chroma format (string)
+#v4l2-chroma=
+
+# Input (integer)
+#v4l2-input=0
+
+# Audio input (integer)
+#v4l2-audio-input=-1
+
+# Width (integer)
+#v4l2-width=0
+
+# Height (integer)
+#v4l2-height=0
+
+# Picture aspect-ratio n:m (string)
+#v4l2-aspect-ratio=4:3
+
+# Frame rate (string)
+#v4l2-fps=60
+
+# Radio device (string)
+#v4l2-radio-dev=/dev/radio0
+
+# Frequency (integer)
+#v4l2-tuner-frequency=-1
+
+# Audio mode (integer)
+#v4l2-tuner-audio-mode=3
+
+# Reset controls (boolean)
+#v4l2-controls-reset=0
+
+# Brightness (integer)
+#v4l2-brightness=-1
+
+# Automatic brightness (integer)
+#v4l2-brightness-auto=-1
+
+# Contrast (integer)
+#v4l2-contrast=-1
+
+# Saturation (integer)
+#v4l2-saturation=-1
+
+# Hue (integer)
+#v4l2-hue=-1
+
+# Automatic hue (integer)
+#v4l2-hue-auto=-1
+
+# White balance temperature (K) (integer)
+#v4l2-white-balance-temperature=-1
+
+# Automatic white balance (integer)
+#v4l2-auto-white-balance=-1
+
+# Red balance (integer)
+#v4l2-red-balance=-1
+
+# Blue balance (integer)
+#v4l2-blue-balance=-1
+
+# Gamma (integer)
+#v4l2-gamma=-1
+
+# Automatic gain (integer)
+#v4l2-autogain=-1
+
+# Gain (integer)
+#v4l2-gain=-1
+
+# Sharpness (integer)
+#v4l2-sharpness=-1
+
+# Chroma gain (integer)
+#v4l2-chroma-gain=-1
+
+# Automatic chroma gain (integer)
+#v4l2-chroma-gain-auto=-1
+
+# Power line frequency (integer)
+#v4l2-power-line-frequency=-1
+
+# Backlight compensation (integer)
+#v4l2-backlight-compensation=-1
+
+# Band-stop filter (integer)
+#v4l2-band-stop-filter=-1
+
+# Horizontal flip (boolean)
+#v4l2-hflip=0
+
+# Vertical flip (boolean)
+#v4l2-vflip=0
+
+# Rotate (degrees) (integer)
+#v4l2-rotate=-1
+
+# Color killer (integer)
+#v4l2-color-killer=-1
+
+# Color effect (integer)
+#v4l2-color-effect=-1
+
+# Audio volume (integer)
+#v4l2-audio-volume=-1
+
+# Audio balance (integer)
+#v4l2-audio-balance=-1
+
+# Mute (boolean)
+#v4l2-audio-mute=0
+
+# Bass level (integer)
+#v4l2-audio-bass=-1
+
+# Treble level (integer)
+#v4l2-audio-treble=-1
+
+# Loudness mode (boolean)
+#v4l2-audio-loudness=0
+
+# v4l2 driver controls (string)
+#v4l2-set-ctrls=
 
 [libbluray] # Blu-ray Disc support (libbluray)
 
@@ -2191,6 +2060,12 @@
 
 # Musicbrainz Server (string)
 #musicbrainz-server=musicbrainz.org
+
+# CDDB Server (string)
+#cddb-server=freedb.videolan.org
+
+# CDDB port (integer)
+#cddb-port=80
 
 [xcb_screen] # Screen capture (with X11/XCB)
 
@@ -2609,6 +2484,47 @@ qt-privacy-ask=0
 # When to raise the interface (integer)
 #qt-auto-raise=1
 
+[access_output_livehttp] # HTTP Live streaming output
+
+# Segment length (integer)
+#sout-livehttp-seglen=10
+
+# Number of segments (integer)
+#sout-livehttp-numsegs=0
+
+# Number of first segment (integer)
+#sout-livehttp-initial-segment-number=1
+
+# Split segments anywhere (boolean)
+#sout-livehttp-splitanywhere=0
+
+# Delete segments (boolean)
+#sout-livehttp-delsegs=1
+
+# Use muxers rate control mechanism (boolean)
+#sout-livehttp-ratecontrol=0
+
+# Allow cache (boolean)
+#sout-livehttp-caching=0
+
+# Use randomized IV for encryption (boolean)
+#sout-livehttp-generate-iv=0
+
+# Index file (string)
+#sout-livehttp-index=
+
+# Full URL to put in index file (string)
+#sout-livehttp-index-url=
+
+# AES key URI to place in playlist (string)
+#sout-livehttp-key-uri=
+
+# AES key file (string)
+#sout-livehttp-key-file=
+
+# File where vlc reads key-uri and keyfile-location (string)
+#sout-livehttp-key-loadfile=
+
 [http] # HTTP stream output
 
 # Username (string)
@@ -2715,11 +2631,6 @@ qt-privacy-ask=0
 # Facility (string)
 #syslog-facility=user
 
-[notify] # LibNotify Notification Plugin
-
-# Timeout (ms) (integer)
-#notify-timeout=4000
-
 [alsa] # ALSA audio output
 
 # Audio output device (string)
@@ -2744,20 +2655,6 @@ qt-privacy-ask=0
 
 # Add WAVE header (boolean)
 #audiofile-wav=1
-
-[jack] # JACK audio output
-
-# Automatically connect to writable clients (boolean)
-#jack-auto-connect=1
-
-# Connect to clients matching (string)
-#jack-connect-regex=system
-
-# JACK client name (string)
-#jack-name=
-
-# Software gain (float)
-#jack-gain=1.000000
 
 [amem] # Audio memory output
 
@@ -3206,23 +3103,6 @@ qt-privacy-ask=0
 
 # ? (string)
 #keystore-file=
-
-[vdpau_chroma] # VDPAU surface conversions
-
-# Deinterlace (integer)
-#vdpau-deinterlace=1
-
-# Inverse telecine (boolean)
-#vdpau-ivtc=0
-
-# Deinterlace chroma skip (boolean)
-#vdpau-chroma-skip=0
-
-# Noise reduction level (float)
-#vdpau-noise-reduction=0.000000
-
-# Scaling quality (integer)
-#vdpau-scaling=0
 
 [lua] # Lua interpreter
 
@@ -3692,7 +3572,7 @@ qt-privacy-ask=0
 #deinterlace-mode=auto
 
 # Video output module (string)
-#vout=
+vout=any
 
 # Video filter module (string)
 #video-filter=

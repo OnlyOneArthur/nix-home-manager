@@ -7,6 +7,8 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+     # nixgl
+      nixgl.url = "github:guibou/nixGL";
     };
   };
 
@@ -15,10 +17,14 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      # nix gl
+      nixGLp = nixgl.packages.${system};
+
     in
     {
       homeConfigurations."arthur" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = {nixGL = nixGLp; };
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.

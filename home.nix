@@ -6,6 +6,14 @@ let
   repo = "${home}/nix-home-manager";
   dot  = "${repo}/dotfiles";
   out  = p: config.lib.file.mkOutOfStoreSymlink p;
+  # intel nixgl
+  nixglBin = nixGL.nixGLIntel;
+  processingX11 = pkgs.writeShellScriptBin "processing-x11" ''
+    export GDK_BACKEND=x11
+    export AWT_TOOLKIT=MToolkit
+    export _JAVA_AWT_WM_NONREPARENTING=1
+    exec ${nixglBin}/bin/nixGL ${pkgs.processing}/bin/processing "$@"
+  '';
 in
 {
   home.username = "arthur";
@@ -53,6 +61,10 @@ in
     figlet
     lsd
     pipx
+    # processing fix
+    processing
+    nixglBin
+    processingX11
 
 
   ];
