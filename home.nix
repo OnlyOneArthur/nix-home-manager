@@ -60,7 +60,7 @@ in
   # mandoc programs
   programs.man = {
       enable = true;
-      packages = pkgs.mandoc;
+      package = pkgs.mandoc;
     };
   
   # manage the allow unfree license packages
