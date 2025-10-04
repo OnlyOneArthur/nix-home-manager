@@ -106,6 +106,8 @@ in
     XDG_DATA_DIRS = "${config.home.profileDirectory}/share:/usr/local/share:/usr/share";
     XDG_ICON_DIRS = "${config.home.profileDirectory}/share/icons:/usr/share:/usr/share/icons";
     EDITOR = "nvim";
+    # fixing mandoc path
+    MANPATH = "/usr/share/man:/usr/local/share/man:${config.home.profileDirectory}/share/man";
   };
 
   # export the local/bin path into every shell that recognize
