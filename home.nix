@@ -53,10 +53,15 @@ in
     figlet
     lsd
     pipx
-    mandoc
 
 
   ];
+
+  # mandoc programs
+  programs.man = {
+      enable = true;
+      packages = pkgs.mandoc;
+    };
   
   # manage the allow unfree license packages
   nixpkgs.config.allowUnfreePredicate = 
