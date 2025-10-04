@@ -48,6 +48,8 @@ in
     htop
     qbittorrent
     fastfetch
+    fd
+    ripgrep
 
 
   ];
