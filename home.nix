@@ -52,8 +52,8 @@ in
     ripgrep
     figlet
     lsd
-    plocate
     pipx
+    mandoc
 
 
   ];
