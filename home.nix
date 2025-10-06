@@ -53,6 +53,7 @@ in
     figlet
     lsd
     pipx
+    gamescope
 
   ];
 
