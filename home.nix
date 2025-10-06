@@ -94,7 +94,7 @@ in
      ".poshthemes".source = ./dotfiles/.poshthemes;
      ".profile".source = ./dotfiles/.profile;
      ".config/nix".source = ./dotfiles/nix;
-     ".gitconfig".source = ./dotfiles/.gitconfig;
+     ".gitconfig".source = out "${dot}/.gitconfig";
 
   };
   # home.file.".gitconfig" = {
