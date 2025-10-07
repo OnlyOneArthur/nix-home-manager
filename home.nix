@@ -22,7 +22,6 @@ in
     vlc
     bat
     bat-extras.core
-    blender
     anki
     hashcat
     hashcat-utils
@@ -101,7 +100,6 @@ in
   #     source = ./dotfiles/.gitconfig;
   #     force = true;
   #   };
-  gpuApps.enable = true;
 
   home.sessionVariables = {
     XDG_DATA_DIRS = "${config.home.profileDirectory}/share:/usr/local/share:/usr/share";
