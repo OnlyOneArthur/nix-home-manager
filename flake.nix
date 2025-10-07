@@ -8,7 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    inputs.nixgl.url = "github:guibou/nixGL";
+    nixgl.url = "github:guibou/nixGL";
 
   };
 
