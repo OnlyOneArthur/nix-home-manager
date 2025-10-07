@@ -1,61 +1,50 @@
-
 { config, pkgs, lib, nixgl, ... }:
 
 let
-  # 1) Choose a wrapper. On AMD/Intel iGPU (your A6), this is the right default.
-  #    If you ever switch to NVIDIA, swap to nixgl.auto.nixGLNvidia.
+  # AMD/Intel default; if you switch to NVIDIA later, use nixgl.auto.nixGLNvidia
   nixGL = nixgl.auto.nixGLDefault;
 
-  # 2) Declare the apps you want to wrap exactly once.
+  # List GPU apps ONCE here.
   gpuApps = [
-    # name: the command your muscle memory uses
-    # bin:  the actual binary inside the package (often same as name)
-    # pkg:  the Nix package to call
     { name = "blender"; bin = "blender"; pkg = pkgs.blender; }
-    { name = "krita";   bin = "krita";   pkg = pkgs.krita; }
-    { name = "mpv";     bin = "mpv";     pkg = pkgs.mpv; }
-    { name = "vlc";     bin = "vlc";     pkg = pkgs.vlc; }
-    # add more:
-    # { name = "godot4"; bin = "godot4"; pkg = pkgs.godot_4; }
-    # { name = "obs";    bin = "obs";    pkg = pkgs.obs-studio; }
-    # { name = "glxinfo";bin = "glxinfo";pkg = pkgs.glxinfo; }
+    # add more when you want:
+    # { name = "krita";   bin = "krita";   pkg = pkgs.krita; }
+    # { name = "mpv";     bin = "mpv";     pkg = pkgs.mpv; }
+    # { name = "vlc";     bin = "vlc";     pkg = pkgs.vlc; }
+    # { name = "godot4";  bin = "godot4";  pkg = pkgs.godot_4; }
+    # { name = "obs";     bin = "obs";     pkg = pkgs.obs-studio; }
   ];
 
-  # Helper: script wrapper that always uses nixGL
+  # CLI wrapper: ensures we always call nixGL with the real store binary
   mkWrapper = app:
     pkgs.writeShellScriptBin app.name ''
       exec ${nixGL}/bin/nixGL ${app.pkg}/bin/${app.bin} "$@"
     '';
 
-  # Helper: desktop entry that also uses nixGL (so clicking icons works)
+  # Desktop entry: launcher menu also uses nixGL explicitly
   mkDesktop = app: {
     name = "${app.name}-nixgl";
     value = {
       name = "${lib.toUpper app.name} (nixGL)";
-      exec = "${nixGL}/bin/nixGL ${app.bin} %U";
-      icon = app.name;               # assumes icon name matches; tweak if needed
+      exec = "${nixGL}/bin/nixGL ${app.pkg}/bin/${app.bin} %U";
+      icon = app.name;      # adjust if icon name differs
       terminal = false;
       categories = [ "Graphics" "AudioVideo" "Utility" ];
     };
   };
-
 in
 {
-  # Expose a small switch if you ever want to disable the wrappers quickly.
   options.gpuApps.enable = lib.mkEnableOption "nixGL wrappers for GPU apps";
 
   config = lib.mkIf config.gpuApps.enable {
-    # Ensure nixGL and the underlying apps are present
-    home.packages =
-      [ nixGL ] ++ (map (a: a.pkg) gpuApps) ++ (map mkWrapper gpuApps);
+    # IMPORTANT: include ONLY the wrappers (and nixGL itself).
+    # Do NOT also list the raw pkgs here, to avoid name collisions.
+    home.packages = [ nixGL ] ++ (map mkWrapper gpuApps);
 
-    # Desktop entries show up as “APPNAME (nixGL)”
-    xdg.desktopEntries =
-      lib.listToAttrs (map mkDesktop gpuApps);
+    # App-launcher entries labelled "(nixGL)"
+    xdg.desktopEntries = lib.listToAttrs (map mkDesktop gpuApps);
 
-    # Make sure ~/.local/bin is early in PATH (wrappers first)
-    programs.zsh.initExtra = lib.mkAfter ''
-      path=("$HOME/.local/bin" $path)
-    '';
+    # Ensure ~/.local/bin (writeShellScriptBin) is early in PATH
+    home.sessionPath = lib.mkBefore [ "$HOME/.local/bin" ];
   };
 }
