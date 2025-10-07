@@ -87,7 +87,6 @@ in
      ".config/vlc".source =  out "${dot}/vlc"; # mkOutOfStoreSymlink
      ".config/btop".source = out "${dot}/btop"; # mkOutOfStoreSymlink
      ".config/containers".source = ./dotfiles/containers;
-     ".config/blender".source = ./dotfiles/blender;
      ".config/weechat".source = ./dotfiles/weechat;
      ".zshrc".source = ./dotfiles/.zshrc;
      ".poshthemes".source = ./dotfiles/.poshthemes;
