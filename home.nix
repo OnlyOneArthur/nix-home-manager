@@ -101,6 +101,7 @@ in
   #     source = ./dotfiles/.gitconfig;
   #     force = true;
   #   };
+  gpuApps.enable = true;
 
   home.sessionVariables = {
     XDG_DATA_DIRS = "${config.home.profileDirectory}/share:/usr/local/share:/usr/share";
