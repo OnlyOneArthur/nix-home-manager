@@ -8,14 +8,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    inputs.nixgl.url = "github:guibou/nixGL";
 
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { nixpkgs, home-manager,nixgl, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      nixglPkgs = nixgl.packages.${system};
 
     in
     {
@@ -27,12 +29,14 @@
         modules = [ 
         ./home.nix 
         ./customScript.nix
+        ./gpuApp.nix
 
 
         ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        nixgl = nixglPkgs;
       };
     };
 }
