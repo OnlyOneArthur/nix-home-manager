@@ -78,7 +78,7 @@ in
   home.file = {
 
   # directory symlink
-     ".config/nvim".source = ./dotfiles/nvim;
+     ".config/nvim".source = out "${dot}/nvim";
      ".config/kitty".source = ./dotfiles/kitty;
      ".config/spotify".source = ./dotfiles/spotify;
      ".config/yazi".source = ./dotfiles/yazi;
