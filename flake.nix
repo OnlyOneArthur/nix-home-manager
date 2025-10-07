@@ -36,7 +36,7 @@
         
         extraSpecialArgs = {
             nixgl = nixglPkgs;
-        }
+        };
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
