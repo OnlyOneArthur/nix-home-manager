@@ -53,6 +53,7 @@ in
     lsd
     pipx
     gamescope
+    strawberry
 
   ];
 
