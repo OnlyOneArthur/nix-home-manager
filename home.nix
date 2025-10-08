@@ -78,7 +78,7 @@ in
   home.file = {
 
   # directory symlink
-     ".config/nvim".source = out "${dot}/nvim";
+     ".config/nvim".source = out "${dot}/nvim"; #mkOutOfStoreSymlink
      ".config/kitty".source = ./dotfiles/kitty;
      ".config/spotify".source = ./dotfiles/spotify;
      ".config/yazi".source = ./dotfiles/yazi;
@@ -89,11 +89,11 @@ in
      ".config/btop".source = out "${dot}/btop"; # mkOutOfStoreSymlink
      ".config/containers".source = ./dotfiles/containers;
      ".config/weechat".source = ./dotfiles/weechat;
-     ".zshrc".source = ./dotfiles/.zshrc;
+     ".zshrc".source = out "{dot}/.zshrc"; #mkOutOfStoreSymlink
      ".poshthemes".source = ./dotfiles/.poshthemes;
      ".profile".source = ./dotfiles/.profile;
      ".config/nix".source = ./dotfiles/nix;
-     ".gitconfig".source = out "${dot}/.gitconfig";
+     ".gitconfig".source = out "${dot}/.gitconfig"; #mkOutOfStoreSymlink
 
   };
   # home.file.".gitconfig" = {
