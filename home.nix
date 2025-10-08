@@ -89,7 +89,7 @@ in
      ".config/btop".source = out "${dot}/btop"; # mkOutOfStoreSymlink
      ".config/containers".source = ./dotfiles/containers;
      ".config/weechat".source = ./dotfiles/weechat;
-     ".zshrc".source = out "{dot}/.zshrc"; #mkOutOfStoreSymlink
+     ".zshrc".source = .dotfiles/.zshrc;
      ".poshthemes".source = ./dotfiles/.poshthemes;
      ".profile".source = ./dotfiles/.profile;
      ".config/nix".source = ./dotfiles/nix;
