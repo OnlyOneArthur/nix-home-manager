@@ -61,7 +61,7 @@ let
       name = "obsidian";
       runtimeInputs = [];
       text = ''
-      cd "$HOME/Documents/Obsidian_vault/" || exit
+      cd "$HOME/Obsidian/" || exit
       nvim
       '';
 
