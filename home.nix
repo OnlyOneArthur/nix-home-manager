@@ -43,7 +43,6 @@ in
     weechat
     spice-vdagent
     btop
-    neovim
     htop
     qbittorrent
     fastfetch
