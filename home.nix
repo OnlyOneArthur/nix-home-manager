@@ -17,7 +17,6 @@ in
   # manage the installed packages
   home.packages = with pkgs; [
     spotify
-    discord
     yazi
     vlc
     bat
