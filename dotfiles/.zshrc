@@ -32,6 +32,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias pacupg='sudo pacman -Syu'
 alias pacrem='sudo pacman -Rcns'
+alias git='lazygit'
 
 # general aliases
 alias cat='bat'
