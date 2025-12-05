@@ -6,6 +6,7 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+-- Auto continue bullets in Markdown
 
 -- make costum command so that it auto make a dash(-) and the rest
 vim.api.nvim_create_autocmd("FileType", {
