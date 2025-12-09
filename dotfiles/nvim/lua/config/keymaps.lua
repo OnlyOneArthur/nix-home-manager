@@ -38,3 +38,6 @@ vim.keymap.set("v", "<leader>zd", "<Cmd>CopilotChatDocs<CR>", { desc = "Generate
 vim.keymap.set("v", "<leader>zt", "<Cmd>CopilotChatTests<CR>", { desc = "Generate Tests" })
 vim.keymap.set("n", "<leader>zm", "<Cmd>CopilotChatCommit<CR>", { desc = "Generate Commit Message" })
 vim.keymap.set("v", "<leader>zs", "<Cmd>CopilotChatCommit<CR>", { desc = "Generate Commit for Selection" })
+
+-- autosave plugins
+vim.api.nvim_set_keymap("n", "<leader>as", "<cmd>ASToggle<CR>", {})
