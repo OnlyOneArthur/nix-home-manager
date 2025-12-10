@@ -52,7 +52,7 @@ in
     pipx
     gamescope
     strawberry
-    notion-app
+    notion-app-enhanced
 
   ];
 
@@ -70,7 +70,7 @@ in
   "discord"
   "brave"
   "zoom-us"
-  "notion-app"
+  "notion-app-enhanced"
   ];
 
   # manage symlink file or directory
