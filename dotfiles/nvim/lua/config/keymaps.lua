@@ -41,3 +41,7 @@ vim.keymap.set("v", "<leader>zs", "<Cmd>CopilotChatCommit<CR>", { desc = "Genera
 
 -- autosave plugins
 vim.api.nvim_set_keymap("n", "<leader>as", "<cmd>ASToggle<CR>", {})
+
+-- live server plugins
+vim.api.nvim_set_keymap("n", "<leader>ls", "<cmd>LiveServerStart<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>lq", "<cmd>LiveServerStop<CR>", {})

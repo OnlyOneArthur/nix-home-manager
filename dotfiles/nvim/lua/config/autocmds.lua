@@ -103,3 +103,27 @@ vim.api.nvim_create_autocmd("FileType", {
     end, map_opts("Export (force)"))
   end,
 })
+
+-- make costum command so that it auto make a dash(-) and the rest
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.formatoptions:append("r") -- `<CR>` in insert mode
+    vim.opt_local.formatoptions:append("o") -- `o` in normal mode
+    vim.opt_local.comments = {
+      "b:- [ ]", -- tasks
+      "b:- [x]",
+      "b:*", -- unordered list
+      "b:-",
+      "b:+",
+    }
+  end,
+})
+
+--toggle off the markdown twiggle red line
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})

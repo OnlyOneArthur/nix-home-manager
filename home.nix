@@ -69,7 +69,7 @@ in
   "discord"
   "brave"
   "zoom-us"
-  "notion-app-enhanced"
+  "notion-app"
   ];
 
   # manage symlink file or directory
