@@ -52,6 +52,7 @@ in
     pipx
     gamescope
     strawberry
+    notion-app
 
   ];
 
