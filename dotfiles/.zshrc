@@ -209,3 +209,5 @@ zinit light zsh-users/zsh-autosuggestions
 # After startup, run:   zinit times
 # nix thing
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
+bindkey -e

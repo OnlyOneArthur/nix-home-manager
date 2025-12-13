@@ -45,3 +45,9 @@ vim.api.nvim_set_keymap("n", "<leader>as", "<cmd>ASToggle<CR>", {})
 -- live server plugins
 vim.api.nvim_set_keymap("n", "<leader>ls", "<cmd>LiveServerStart<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>lq", "<cmd>LiveServerStop<CR>", {})
+
+-- code runner plugins
+vim.keymap.set("n", "<F5>", ":RunCode<CR>", { noremap = true, silent = false, desc = "Run Code" })
+
+-- Additional utility keybindings (optional, can remove if not needed)
+vim.keymap.set("n", "<leader>rc", ":RunClose<CR>", { noremap = true, silent = false, desc = "Close Runner" })
