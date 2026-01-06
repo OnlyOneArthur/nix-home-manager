@@ -76,7 +76,7 @@ in
 
   # directory symlink
      ".config/nvim".source = out "${dot}/nvim"; #mkOutOfStoreSymlink
-    # ".config/kitty".source = out "${dot}/kitty"; #mkOutOfStoreSymlink
+    ".config/kitty".source = out "${dot}/kitty"; #mkOutOfStoreSymlink
      ".config/spotify".source = ./dotfiles/spotify;
      ".config/yazi".source = ./dotfiles/yazi;
      # ".config/waybar".source = ./dotfiles/waybar;
