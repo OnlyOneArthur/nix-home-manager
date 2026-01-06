@@ -79,11 +79,11 @@ in
     # ".config/kitty".source = out "${dot}/kitty"; #mkOutOfStoreSymlink
      ".config/spotify".source = ./dotfiles/spotify;
      ".config/yazi".source = ./dotfiles/yazi;
-     ".config/waybar".source = ./dotfiles/waybar;
+     # ".config/waybar".source = ./dotfiles/waybar;
      ".config/Thunar".source = ./dotfiles/Thunar;
      ".config/lazygit".source = ./dotfiles/lazygit;
      ".config/vlc".source =  out "${dot}/vlc"; # mkOutOfStoreSymlink
-     ".config/btop".source = out "${dot}/btop"; # mkOutOfStoreSymlink
+     # ".config/btop".source = out "${dot}/btop"; # mkOutOfStoreSymlink
      ".config/containers".source = ./dotfiles/containers;
      ".config/weechat".source = ./dotfiles/weechat;
      ".zshrc".source = ./dotfiles/.zshrc;
